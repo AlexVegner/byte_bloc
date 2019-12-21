@@ -1,7 +1,6 @@
 name: byte_bloc
 description: ByteBloc simplify binary array parsing for C/C++ structures.
 version: 0.0.1
-author: Alex Vegner <alexvegner@gmail.com>
 repository: https://github.com/AlexVegner/byte_bloc
 issue_tracker: https://github.com/AlexVegner/byte_bloc/issues
 homepage: https://github.com/AlexVegner/byte_bloc
@@ -11,6 +10,7 @@ environment:
 
 dependencies:
   meta: ^1.1.8
+  convert: ^2.1.1
 
 dev_dependencies:
   test: ^1.9.4

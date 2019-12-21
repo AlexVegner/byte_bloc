@@ -9,6 +9,10 @@ class ByteBloc {
   int cursor = 0;
   ByteBloc(this.list): buffer = list.buffer;
 
+  factory ByteBloc.empty() {
+    return ByteBloc(Uint8List.fromList([]));
+  }
+
   ByteBloc readByteBloc(size, {int offset}) {
     final byteOffset = offset ?? cursor;
     cursor = byteOffset + size;

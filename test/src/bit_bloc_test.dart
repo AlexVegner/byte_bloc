@@ -17,7 +17,6 @@ void main() {
       expect(bitBloc.readBits(2, offset: 2), 3);
       expect(bitBloc.readBits(5, offset: 4), 17);
     });
-   
   });
 
   group("write bits", () {
@@ -38,7 +37,5 @@ void main() {
       bitBloc.writeBits(1, 1, offset: 8);
       expect(bitBloc.bits, 284);
     });
-   
   });
-
 }

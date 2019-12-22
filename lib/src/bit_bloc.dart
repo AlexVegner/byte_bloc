@@ -22,5 +22,4 @@ class BitBloc {
     final bitMask = ~(((math.pow(2, size) as int) - 1) << byteOffset);
     bits = (bits & bitMask) | maskedValueWithOffset;
   }
-
 }

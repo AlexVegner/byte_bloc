@@ -31,7 +31,7 @@ class ByteBloc {
     cursor = byteOffset + size;
     return result.replaceAll('\u{00}', '');
   }
-  
+
   /// Read Uint8
   int readUint8({int offset}) {
     final byteSize = 1;
@@ -103,7 +103,7 @@ class ByteBloc {
     cursor = byteOffset + byteSize;
     return result;
   }
-  
+
   /// Read Float32
   double readFloat32({int offset, Endian endian = Endian.little}) {
     final byteSize = 4;
@@ -253,7 +253,6 @@ class ByteBloc {
     return tempList;
   }
 
-
   /// Read List<Uint64List>
   List<Uint64List> readUint64SquareList(
       {@required columns, @required rows, int offset}) {
@@ -364,7 +363,7 @@ class ByteBloc {
       return list;
     } else {
       final tempList = Uint8List(expectedSize);
-      if (list.length > 0) {
+      if (list.isNotEmpty) {
         tempList.setRange(0, list.length, list);
       }
       list = tempList;
@@ -591,7 +590,7 @@ class ByteBloc {
     }
   }
 
-  /// Write BitBloc 32 bit with Uint32 
+  /// Write BitBloc 32 bit with Uint32
   void writeBitBloc32(BitBloc value,
       {int offset, Endian endian = Endian.little}) {
     writeUint32(value.bits, offset: offset, endian: endian);
@@ -608,10 +607,9 @@ class ByteBloc {
     writeUint8List(value.list, offset: offset);
   }
 
-
   /// normalize size of C structure
   /// For 32 bits system size equal 4 bytes
-  /// For 64 bits system size equal 8 bytes  
+  /// For 64 bits system size equal 8 bytes
   void normalize([int size = 4]) {
     final expectedSize = (2 / size).ceil() * size;
     _expandList(expectedSize, offset: 0);

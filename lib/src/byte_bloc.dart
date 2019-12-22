@@ -220,8 +220,8 @@ class ByteBloc {
     final byteSize = 1;
     final byteOffset = offset ?? cursor;
     final tempList = List<Uint8List>(columns);
-    for (int i = 0; i < columns; i++) {
-      int columnOffset = byteOffset + (i * rows * byteSize);
+    for (var i = 0; i < columns; i++) {
+      final columnOffset = byteOffset + (i * rows * byteSize);
       tempList[i] = readUint8List(rows, offset: columnOffset);
     }
     return tempList;
@@ -229,12 +229,12 @@ class ByteBloc {
 
   /// Read List<Uint16List>
   List<Uint16List> readUint16SquareList(
-      {@required columns, @required rows, int offset}) {
+      {@required int columns, @required int rows, int offset}) {
     final byteSize = 2;
     final byteOffset = offset ?? cursor;
     final tempList = List<Uint16List>(columns);
-    for (int i = 0; i < columns; i++) {
-      int columnOffset = byteOffset + (i * rows * byteSize);
+    for (var i = 0; i < columns; i++) {
+      final columnOffset = byteOffset + (i * rows * byteSize);
       tempList[i] = readUint16List(rows, offset: columnOffset);
     }
     return tempList;
@@ -242,12 +242,12 @@ class ByteBloc {
 
   /// Read List<Uint32List>
   List<Uint32List> readUint32SquareList(
-      {@required columns, @required rows, int offset}) {
+      {@required int columns, @required int rows, int offset}) {
     final byteSize = 4;
     final byteOffset = offset ?? cursor;
     final tempList = List<Uint32List>(columns);
-    for (int i = 0; i < columns; i++) {
-      int columnOffset = byteOffset + (i * rows * byteSize);
+    for (var i = 0; i < columns; i++) {
+      final columnOffset = byteOffset + (i * rows * byteSize);
       tempList[i] = readUint32List(rows, offset: columnOffset);
     }
     return tempList;
@@ -255,12 +255,12 @@ class ByteBloc {
 
   /// Read List<Uint64List>
   List<Uint64List> readUint64SquareList(
-      {@required columns, @required rows, int offset}) {
+      {@required int columns, @required int rows, int offset}) {
     final byteSize = 8;
     final byteOffset = offset ?? cursor;
     final tempList = List<Uint64List>(columns);
-    for (int i = 0; i < columns; i++) {
-      int columnOffset = byteOffset + (i * rows * byteSize);
+    for (var i = 0; i < columns; i++) {
+      final columnOffset = byteOffset + (i * rows * byteSize);
       tempList[i] = readUint64List(rows, offset: columnOffset);
     }
     return tempList;
@@ -268,12 +268,12 @@ class ByteBloc {
 
   /// Read List<Int8List>
   List<Int8List> readInt8SquareList(
-      {@required columns, @required rows, int offset}) {
+      {@required int columns, @required int rows, int offset}) {
     final byteSize = 1;
     final byteOffset = offset ?? cursor;
     final tempList = List<Int8List>(columns);
-    for (int i = 0; i < columns; i++) {
-      int columnOffset = byteOffset + (i * rows * byteSize);
+    for (var i = 0; i < columns; i++) {
+      final columnOffset = byteOffset + (i * rows * byteSize);
       tempList[i] = readInt8List(rows, offset: columnOffset);
     }
     return tempList;
@@ -281,12 +281,12 @@ class ByteBloc {
 
   /// Read List<Int16List>
   List<Int16List> readInt16SquareList(
-      {@required columns, @required rows, int offset}) {
+      {@required int columns, @required int rows, int offset}) {
     final byteSize = 2;
     final byteOffset = offset ?? cursor;
     final tempList = List<Int16List>(columns);
-    for (int i = 0; i < columns; i++) {
-      int columnOffset = byteOffset + (i * rows * byteSize);
+    for (var i = 0; i < columns; i++) {
+      final columnOffset = byteOffset + (i * rows * byteSize);
       tempList[i] = readInt16List(rows, offset: columnOffset);
     }
     return tempList;
@@ -294,12 +294,12 @@ class ByteBloc {
 
   /// Read List<Int32List>
   List<Int32List> readInt32SquareList(
-      {@required columns, @required rows, int offset}) {
+      {@required int columns, @required int rows, int offset}) {
     final byteSize = 4;
     final byteOffset = offset ?? cursor;
     final tempList = List<Int32List>(columns);
-    for (int i = 0; i < columns; i++) {
-      int columnOffset = byteOffset + (i * rows * byteSize);
+    for (var i = 0; i < columns; i++) {
+      final columnOffset = byteOffset + (i * rows * byteSize);
       tempList[i] = readInt32List(rows, offset: columnOffset);
     }
     return tempList;
@@ -307,12 +307,12 @@ class ByteBloc {
 
   /// Read List<Int64List>
   List<Int64List> readInt64SquareList(
-      {@required columns, @required rows, int offset}) {
+      {@required int columns, @required int rows, int offset}) {
     final byteSize = 8;
     final byteOffset = offset ?? cursor;
     final tempList = List<Int64List>(columns);
-    for (int i = 0; i < columns; i++) {
-      int columnOffset = byteOffset + (i * rows * byteSize);
+    for (var i = 0; i < columns; i++) {
+      final columnOffset = byteOffset + (i * rows * byteSize);
       tempList[i] = readInt64List(rows, offset: columnOffset);
     }
     return tempList;
@@ -320,12 +320,12 @@ class ByteBloc {
 
   /// Read List<Float32List>
   List<Float32List> readFloat32SquareList(
-      {@required columns, @required rows, int offset}) {
+      {@required int columns, @required int rows, int offset}) {
     final byteSize = 4;
     final byteOffset = offset ?? cursor;
     final tempList = List<Float32List>(columns);
-    for (int i = 0; i < columns; i++) {
-      int columnOffset = byteOffset + (i * rows * byteSize);
+    for (var i = 0; i < columns; i++) {
+      final columnOffset = byteOffset + (i * rows * byteSize);
       tempList[i] = readFloat32List(rows, offset: columnOffset);
     }
     return tempList;
@@ -333,12 +333,12 @@ class ByteBloc {
 
   /// Read List<Float64List>
   List<Float64List> readFloat64SquareList(
-      {@required columns, @required rows, int offset}) {
+      {@required int columns, @required int rows, int offset}) {
     final byteSize = 8;
     final byteOffset = offset ?? cursor;
     final tempList = List<Float64List>(columns);
-    for (int i = 0; i < columns; i++) {
-      int columnOffset = byteOffset + (i * rows * byteSize);
+    for (var i = 0; i < columns; i++) {
+      final columnOffset = byteOffset + (i * rows * byteSize);
       tempList[i] = readFloat64List(rows, offset: columnOffset);
     }
     return tempList;
@@ -522,70 +522,70 @@ class ByteBloc {
 
   /// Write List<Uint8List>
   void writeUint8SquareList(List<Uint8List> value, {int offset}) {
-    for (int i = 0; i < value.length; i++) {
+    for (var i = 0; i < value.length; i++) {
       _writeTypedList(value[i], offset: offset);
     }
   }
 
   /// Write List<Uint16List>
   void writeUint16SquareList(List<Uint16List> value, {int offset}) {
-    for (int i = 0; i < value.length; i++) {
+    for (var i = 0; i < value.length; i++) {
       _writeTypedList(value[i], offset: offset);
     }
   }
 
   /// Write List<Uint32List>
   void writeUint32SquareList(List<Uint32List> value, {int offset}) {
-    for (int i = 0; i < value.length; i++) {
+    for (var i = 0; i < value.length; i++) {
       _writeTypedList(value[i], offset: offset);
     }
   }
 
   /// Write List<Uint64List>
   void writeUint64SquareList(List<Uint64List> value, {int offset}) {
-    for (int i = 0; i < value.length; i++) {
+    for (var i = 0; i < value.length; i++) {
       _writeTypedList(value[i], offset: offset);
     }
   }
 
   /// Write List<Int8List>
   void writeInt8SquareList(List<Int8List> value, {int offset}) {
-    for (int i = 0; i < value.length; i++) {
+    for (var i = 0; i < value.length; i++) {
       _writeTypedList(value[i], offset: offset);
     }
   }
 
   /// Write List<Int16List>
   void writeInt16SquareList(List<Int16List> value, {int offset}) {
-    for (int i = 0; i < value.length; i++) {
+    for (var i = 0; i < value.length; i++) {
       _writeTypedList(value[i], offset: offset);
     }
   }
 
   /// Write List<Int32List>
   void writeInt32SquareList(List<Int32List> value, {int offset}) {
-    for (int i = 0; i < value.length; i++) {
+    for (var i = 0; i < value.length; i++) {
       _writeTypedList(value[i], offset: offset);
     }
   }
 
   /// Write List<Int64List>
   void writeInt64SquareList(List<Int64List> value, {int offset}) {
-    for (int i = 0; i < value.length; i++) {
+    for (var i = 0; i < value.length; i++) {
       _writeTypedList(value[i], offset: offset);
     }
   }
 
   /// Write List<Float32List>
   void writeFloat32SquareList(List<Float32List> value, {int offset}) {
-    for (int i = 0; i < value.length; i++) {
+    for (var i = 0; i < value.length; i++) {
       _writeTypedList(value[i], offset: offset);
     }
   }
 
   /// Write List<Float64List>
   void writeFloat64SquareList(List<Float64List> value, {int offset}) {
-    for (int i = 0; i < value.length; i++) {
+    for (var i = 0; i < value.length; i++) {
       _writeTypedList(value[i], offset: offset);
     }
   }

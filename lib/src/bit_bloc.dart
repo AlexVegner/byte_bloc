@@ -8,9 +8,9 @@ class BitBloc {
   int readBits(int size, {int offset}) {
     final byteOffset = offset ?? cursor;
     cursor = byteOffset + size;
-    int mask = (((math.pow(2, size) as int) - 1) << byteOffset);
-    int withMask = (bits & mask);
-    int result = withMask >> byteOffset;
+    final mask = (((math.pow(2, size) as int) - 1) << byteOffset);
+    final withMask = (bits & mask);
+    final result = withMask >> byteOffset;
     return result;
   }
 

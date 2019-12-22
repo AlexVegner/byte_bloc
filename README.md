@@ -10,7 +10,8 @@ ByteBloc simplify binary array parsing for C/C++ structures.
 import 'package:byte_bloc/byte_bloc.dart';
 ```
 
-# Example of C/C++ structure from embeded device
+# C/C++ structure
+Example of C/C++ structure from embeded device
 ```cpp
 struct DeviceStructure
 {
@@ -18,12 +19,14 @@ struct DeviceStructure
     char longitude[12];
 };
 ```
-# Binary array of the structure will look like
+# Binary array
+Binary array of the structure will look like
 ```cpp
 [10, 0, 0, 0, 77, 121, 32, 100, 101, 118, 105, 99, 101, 0, 0, 0]
 ```
 
-# From dart side we can implement model with factory fromByteBloc and method toByteBloc
+# Model
+From dart side we can implement model with factory fromByteBloc and method toByteBloc
 ```dart
 class DeviceStructure {
   static const int NAME_SIZE = 12;
@@ -49,14 +52,15 @@ class DeviceStructure {
 
 # Deserialize model
 ```dart
-  final binaryArray = [10, 0, 0, 0, 77, 121, 32, 100, 101, 118, 105, 99, 101, 0, 0, 0];
-  final binaryArrayByteBloc = ByteBloc(Uint8List.fromList(binaryArray));
-  final deviceStructure = DeviceStructure.fromByteBloc(binaryArrayByteBloc);
+final binaryArray = [10, 0, 0, 0, 77, 121, 32, 100, 101, 118, 105, 99, 101, 0, 0, 0];
+final binaryArrayByteBloc = ByteBloc(Uint8List.fromList(binaryArray));
+final deviceStructure = DeviceStructure.fromByteBloc(binaryArrayByteBloc);
 ```
 # Serialize model
 ```dart
-  final resultByteBloc = deviceStructure.toByteBloc();
-  print(resultByteBloc.list);
+final resultByteBloc = deviceStructure.toByteBloc();
+print(resultByteBloc.list);
 ```
 
-# TODO Write unite tests for ByteBloc write methods
+# TODO
+- Write unit tests for ByteBloc write methods

@@ -1,3 +1,9 @@
+## 0.1.6
+* Minor fixes
+
+## 0.1.5
+* Write examples for bits stricture
+
 ## 0.1.4
 * Minor fixes
 

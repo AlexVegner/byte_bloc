@@ -1,3 +1,12 @@
+## 0.1.9
+* Minor fixes
+
+## 0.1.8
+* Minor fixes
+
+## 0.1.7
+* Update ByteBloc.empty constructor with size
+
 ## 0.1.6
 * Minor fixes
 

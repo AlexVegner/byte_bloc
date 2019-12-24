@@ -1,6 +1,6 @@
 name: byte_bloc
 description: ByteBloc simplify binary array parsing for C/C++ structures.
-version: 0.1.6
+version: 0.1.9
 repository: https://github.com/AlexVegner/byte_bloc
 issue_tracker: https://github.com/AlexVegner/byte_bloc/issues
 homepage: https://github.com/AlexVegner/byte_bloc

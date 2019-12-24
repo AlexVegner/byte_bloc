@@ -18,7 +18,12 @@ class DeviceStructure {
     final bitBloc = byteBloc.readBitBloc32();
     final isActive = bitBloc.readBool();
     final flags = bitBloc.readBits(FLAGS_SIZE);
-    return DeviceStructure(id: id, name: name, isActive: isActive, flags: flags);
+    return DeviceStructure(
+      id: id,
+      name: name,
+      isActive: isActive,
+      flags: flags,
+    );
   }
 
   ByteBloc toByteBloc() {

@@ -12,8 +12,8 @@ class ByteBloc {
   ByteBloc(this.list) : buffer = list.buffer;
 
   /// ByteBloc.empty create ByteBloc with empty list
-  factory ByteBloc.empty() {
-    return ByteBloc(Uint8List.fromList([]));
+  factory ByteBloc.empty([int size = 0]) {
+    return ByteBloc(Uint8List(size));
   }
 
   /// Read copy of ByteBloc with offset

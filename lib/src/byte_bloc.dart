@@ -8,6 +8,8 @@ class ByteBloc {
   ByteBuffer buffer;
   int cursor = 0;
 
+  int get lastIdex => list.length == 0 ? 0 : list.length;
+
   /// ByteBloc.empty create ByteBloc with Uint8List
   ByteBloc(this.list) : buffer = list.buffer;
 
@@ -20,7 +22,7 @@ class ByteBloc {
   ByteBloc readByteBloc(size, {int offset}) {
     final byteOffset = offset ?? cursor;
     cursor = byteOffset + size;
-    return ByteBloc(readUint8List(size, offset: offset));
+    return ByteBloc(Uint8List.fromList(readUint8List(size, offset: byteOffset)));
   }
 
   /// Read string
@@ -463,7 +465,8 @@ class ByteBloc {
   }
 
   void _writeTypedList(TypedData value, {int offset}) {
-    final byteSize = value.elementSizeInBytes;
+    final adList = value.buffer.asUint8List();
+    final byteSize = adList.length;
     final byteOffset = offset ?? cursor;
     _expandList(byteSize, offset: byteOffset)
       ..setRange(byteOffset, byteOffset + byteSize, value.buffer.asUint8List());
@@ -473,6 +476,11 @@ class ByteBloc {
   /// Write Uint8List
   void writeUint8List(Uint8List value, {int offset}) {
     _writeTypedList(value, offset: offset);
+  }
+
+  /// Append Uint8List
+  void appendUint8List(Uint8List value) {
+    _writeTypedList(value, offset: lastIdex);
   }
 
   /// Write Uint16List
@@ -613,5 +621,10 @@ class ByteBloc {
   void normalize([int size = 4]) {
     final expectedSize = (2 / size).ceil() * size;
     _expandList(expectedSize, offset: 0);
+  }
+
+  @override
+  String toString() {
+    return list.toString();
   }
 }

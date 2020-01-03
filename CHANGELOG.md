@@ -1,3 +1,16 @@
+## 0.2.3
+* Fix readByteBloc with nested blocs
+
+## 0.2.2
+* Minor fixes
+
+## 0.2.1
+* Write test for appendUint8List
+
+## 0.2.0
+* Add toString
+* Add appendUint8List
+
 ## 0.1.9
 * Minor fixes
 

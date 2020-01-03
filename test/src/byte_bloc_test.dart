@@ -210,14 +210,31 @@ void main() {
       test('byteBloc', () {
         byteBloc.cursor = 0;
         expect(byteBloc.readByteBloc(4, offset: 2).list, [0xff, 0, 0x01, 0xff]);
-      });
+      });      
     });
+
+    group("read nested byte bloc", () {
+      final byteBloc = ByteBloc(Uint8List.fromList([174, 1, 6, 0, 0, 0, 1, 0, 221, 111, 16, 14, 0, 0]));
+      test('byteBloc', () {
+        final bloc = byteBloc.readByteBloc(12, offset: 2);
+        expect(bloc.readUint32(), 6);
+        expect(bloc.readByteBloc(4).list, [1, 0, 221, 111]);
+        expect(bloc.readByteBloc(4).list, [16, 14, 0, 0]);
+      });      
+    });
+
+
+
 
   });
 
-  
-
-  
+  group("append data", () {
+    test('appendUint8List', () {
+        final byteBloc = ByteBloc(Uint8List.fromList([1, 2, 3]));
+        byteBloc.appendUint8List(Uint8List.fromList([4, 5, 6]));
+        expect(byteBloc.list, [1, 2, 3, 4, 5, 6]);
+      });
+  });
 
   // test('adds one to input values', () {
   //   final calculator = Calculator();
